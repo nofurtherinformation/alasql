@@ -422,7 +422,7 @@ There are several ways to handle AlaSQL with Webpack:
 
 ##### IgnorePlugin
 
-Ideal when you want to control which modules you want to import.
+Ideal when you want to control which modules you want to import, you can use Webpack's [IgnorePlugin](https://webpack.js.org/plugins/ignore-plugin/).
 
 ```js
 var IgnorePlugin =  require("webpack").IgnorePlugin;
@@ -430,7 +430,7 @@ var IgnorePlugin =  require("webpack").IgnorePlugin;
 module.exports = {
   ...
   // Will ignore the modules fs, path, xlsx, request, vertx, and react-native modules
-  plugins:[new IgnorePlugin(/(^fs$|cptable|jszip|xlsx|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|cpexcel|^path$|^request$|react-native|^vertx$)/)]
+  plugins:[new IgnorePlugin({resourceRegExp: /(^fs$|cptable|jszip|xlsx|^es6-promise$|^net$|^tls$|^forever-agent$|^tough-cookie$|cpexcel|^path$|^request$|react-native|^vertx$)/})]
 };
 ```
 
